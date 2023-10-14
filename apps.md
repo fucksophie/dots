@@ -80,7 +80,7 @@ install -dm0 ~/.dropbox-dist
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 spicetify backup apply
 ```
-12. Fonts - `TBD`
+12. Fonts - `ttf-jebrains-mono-nerd`
 13. Discord - `discord`
 ```
 sudo chown -R $USER:$USER /opt/discord
