@@ -1,0 +1,32 @@
+@import "macchiato.css";
+
+#waybar {
+  padding: 5px;
+  background-color: @surface0;
+  border-bottom: 1px solid @surface1;
+  color: @pink;
+}
+
+#workspaces button {
+  border-radius: 0;
+  transition: 0.4s;
+  background-color: @surface1;
+}
+
+#workspaces button.active {
+  background-color: @surface2;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+}
+
+#workspaces button:hover {
+  background-color: @rosewater;
+}
+
+#clock, #pulseaudio, #tray {
+  background-color: @surface1;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 3px 0px 3px;
+}
