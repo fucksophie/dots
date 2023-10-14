@@ -92,3 +92,4 @@ Install vencord, and then install openasar!
 Go to chrome://flags page, then search wayland. You will see the Preferred Ozone platform setting. Set it to auto. The default one is "X11". "Auto" selects Wayland if possible, X11 otherwise. 
 ```
 15. Documents - `wps-office ttf-wps-fonts`
+16. Code editor - `visual-studio-code-bin`
