@@ -9,7 +9,7 @@ ansible-playbook -K play.yml
 ```
 
 # Manual setup
-[Visit here](https://github.com/yourfriendoss/dots/blob/main/manual.md), to install my setup manually (Warning, this might be out of date!).
+[Visit here](manual.md), to install my setup manually (Warning, this might be out of date!).
 
 # apps
 Deps: `pkgconfig patch flex bison which`

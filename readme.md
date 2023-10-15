@@ -1,6 +1,11 @@
 # YOURFRIEND'S DOTFILES
-1. [Get archlinux into a bootable/usable state instantly](https://github.com/yourfriendoss/dots/blob/main/install-arch.md)
-2. [Get archlinux into a full desktop](https://github.com/yourfriendoss/dots/blob/main/apps.md)
+<center>
+<img alt="screenshot of my desktop" src="screenshot.png">
+pipes.sh -c 5 -p 2 -f 1 -s 2
+</center>
+
+1. [Get archlinux into a bootable/usable state instantly](install-arch.md)
+2. [Get archlinux into a full desktop](apps.md)
 
 ## Credit
 1. [Catppuccin Macchiato - contributors](https://github.com/catppuccin/catppuccin)
