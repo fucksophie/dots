@@ -93,3 +93,4 @@ Go to chrome://flags page, then search wayland. You will see the Preferred Ozone
 ```
 15. Documents - `wps-office ttf-wps-fonts`
 16. Code editor - `visual-studio-code-bin`
+17. Extras - `pipes.sh neofetch`

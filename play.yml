@@ -150,6 +150,8 @@
         - wps-office
         - ttf-wps-fonts
         - visual-studio-code-bin
+        - pipes.sh
+        - neofetch
       state: present
       extra_args: "--needed"
     become: yes
