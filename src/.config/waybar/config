@@ -2,13 +2,13 @@
     "layer": "top",
     "height": 30,
     "spacing": 4,
-    "modules-left": ["wlr/workspaces", "custom/media"],
+    "modules-left": ["hyprland/workspaces", "custom/media"],
     "modules-right": [
         "pulseaudio", 
         "clock", 
         "tray"
     ],
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
