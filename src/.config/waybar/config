@@ -4,6 +4,7 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces", "custom/media"],
     "modules-right": [
+	"battery",
         "pulseaudio", 
         "clock", 
         "tray"

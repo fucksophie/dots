@@ -25,7 +25,7 @@
   background-color: @rosewater;
 }
 
-#clock, #pulseaudio, #tray {
+#clock, #pulseaudio, #tray, #battery {
   background-color: @surface1;
   padding: 0px 10px 0px 10px;
   margin: 0px 3px 0px 3px;
