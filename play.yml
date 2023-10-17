@@ -1,13 +1,13 @@
-#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-#⠀⣀⣠⡤⣀⣀⡀⠀⠀⠀⠑⡀⠈⠂⡠⣠⠊⠀⢀⠜⠀⠀⠀⠀⣀⣀⠀⠀⠀
+#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⣀⣠⡤⣀⣀⡀⠀⠀⠀⠑⡀⠈⠂⡠⣠⠊⠀⢀⠜⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀
 #⠈⢿⣭⡍⠩⠉⠄⢛⡲⠤⣀⠸⣄⣿⣿⣿⣷⣴⣡⠤⣒⠩⠝⢩⡙⠫⠝⠛⣶
-#⠀⠀⠉⢖⠒⠒⠒⠀⠐⠚⠷⣺⣇⠀⠀⠀⠋⣿⠿⣗⣀⡉⠉⠩⣭⣤⣽⠿⠋
-#⠀⠀⠀⠈⠓⠠⠤⠬⠷⠖⢋⡽⣿⣷⢄⣸⣼⣿⣍⠓⠥⢍⣶⣤⡍⠔⠂⠀⠀
-#⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⢩⣾⣿⣛⢟⠿⢿⣷⡌⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀
-#⠀⠀⠀⠀⠀⠀⠀⠂⠉⠰⡟⣯⣍⠙⠛⠛⢛⣿⣗⡄⠈⠀⠃⠀⠀⠀⠀⠀⠀
-#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠁⣯⣙⠛⠿⠟⢻⣿⠛⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀
-#⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠘⢿⡻⠿⠾⣻⠏⠀⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀
-#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠜⠀⠀⠀⠉⠙⠋⠁⠀⠀⠘⠂⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠉⢖⠒⠒⠒⠀⠐⠚⠷⣺⣇⠀⠀⠀⠋⣿⠿⣗⣀⡉⠉⠩⣭⣤⣽⠿⠋⠀
+#⠀⠀⠀⠈⠓⠠⠤⠬⠷⠖⢋⡽⣿⣷⢄⣸⣼⣿⣍⠓⠥⢍⣶⣤⡍⠔⠂⠀⠀⠀
+#⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⢩⣾⣿⣛⢟⠿⢿⣷⡌⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⠀⠀⠀⠂⠉⠰⡟⣯⣍⠙⠛⠛⢛⣿⣗⡄⠈⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠁⣯⣙⠛⠿⠟⢻⣿⠛⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠘⢿⡻⠿⠾⣻⠏⠀⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#⠀⠀⠀⠀⠀⠀⠀⠀⠀⠜⠀⠀⠀⠉⠙⠋⠁⠀⠀⠘⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 # This file should be distributed elsewhere.
 # Once you're in your arch system (with networking!), `wget` this file and run
@@ -22,11 +22,13 @@
   - name: Gather the package facts
     ansible.builtin.package_facts:
       manager: auto
+  
   - name: Create user group
     ansible.builtin.group:
       name: yf
       state: present
     become: yes
+  
   - name: Create user
     ansible.builtin.user:
       name: yf
@@ -35,12 +37,14 @@
       append: yes
       state: present
     become: yes
+  
   - name: Install sudo
     community.general.pacman:
       name:
         - sudo
       state: present
     become: yes
+  
   - name: Give user yf max sudoers
     community.general.sudoers:
       name: main-user
@@ -49,6 +53,16 @@
       runas: ALL
       commands: ALL
     become: yes
+  
+  - name: Install yay prerequisites
+    community.general.pacman:
+      name:
+        - make
+        - gcc
+        - fakeroot
+      state: present  
+    become: yes  
+  
   - name: Install yay using makepkg if it isn't installed already
     kewlfft.aur.aur:
       name: yay
@@ -56,11 +70,22 @@
       state: present
     become: yes
     become_user: yf
+  
   - name: Creates getty autologin service folder
     ansible.builtin.file:
       path: /etc/systemd/system/getty@tty1.service.d
       state: directory
     become: yes
+
+  - name: Create skip-username.conf
+    ansible.builtin.file:
+      path: /etc/systemd/system/getty@tty1.service.d/skip-username.conf
+      state: touch
+      modification_time: preserve
+      access_time: preserve
+    become: yes
+    become_user: yf
+
   - name: Insert block in getty config
     ansible.builtin.blockinfile:
       path: /etc/systemd/system/getty@tty1.service.d/skip-username.conf
@@ -70,33 +95,39 @@
         ExecStart=-/sbin/agetty -o '-p -- yf' --noclear --skip-login - $TERM
         Environment=XDG_SESSION_TYPE=wayland
     become: yes
+  
   - name: Enable getty@tty1
     ansible.builtin.systemd:
       name: getty@tty1
       enabled: true
     become: yes
+  
   - name: Remove password of yf
     user: name=yf password=''
     become: yes
+  
   - name: Install stow
     community.general.pacman:
       name:
         - stow
       state: present  
     become: yes  
+  
   - name: Clone my dotfiles
     ansible.builtin.git:
       repo: 'https://github.com/yourfriendoss/dots.git'
       dest: /home/yf/.shell
     become: yes
     become_user: yf
+  
   - name: Upgrade the system using yay
     kewlfft.aur.aur:
       upgrade: yes
       use: yay
     become: yes
     become_user: yf
-  - name: Run stow
+  
+  - name: Run stowt
     ansible.builtin.shell: "stow . --target=/home/yf/ --verbose=2"
     args:
       chdir: /home/yf/.shell/src
@@ -104,64 +135,72 @@
     changed_when: 'result.stderr is search("LINK: ")'
     become: yes
     become_user: yf
+  
   - name: Install dropbox GPG key
     ansible.builtin.shell: curl -sSL https://linux.dropbox.com/fedora/rpm-public-key.asc | gpg --import
     register: result
     changed_when: 'result.stderr is search("imported")'
     become: yes
-  - name: Install everything!
+  
+  - name: Install everything
     kewlfft.aur.aur:
       use: yay
-      name:
-        - python-gpgme
-        - pkgconfig
-        - patch
-        - flex
-        - bison
-        - which
-        - pipewire
-        - wireplumber
-        - pipewire-pulse
-        - pipewire-alsa
-        - pipewire-jack
-        - qpwgraph
-        - hyprland
-        - xdg-desktop-portal-hyprland-git
-        - polkit-kde-agent
-        - waybar-hyprland-git
-        - alacritty
-        - wl-clipboard
-        - slurp
-        - grim
-        - rofi-lbonn-wayland-git
-        - mako
-        - swww
-        - thunar
-        - gvfs
-        - gvfs-smb
-        - dropbox
-        - thunar-dropbox
-        - dropbox-cli
-        - spotify
-        - spicetify-cli
-        - ttf-jetbrains-mono-nerd
-        - discord
-        - vivaldi
-        - wps-office
-        - ttf-wps-fonts
-        - visual-studio-code-bin
-        - pipes.sh
-        - neofetch
+      name: "{{ item }}"
       state: present
       extra_args: "--needed"
+    loop:
+      - sdbus-cpp
+      - python-gpgme
+      - pkgconfig
+      - patch
+      - flex
+      - bison
+      - which
+      - pipewire
+      - wireplumber
+      - pipewire-pulse
+      - pipewire-alsa
+      - pipewire-jack
+      - qpwgraph
+      - hyprland
+      - xdg-desktop-portal-hyprland-git
+      - polkit-kde-agent
+      - waybar-hyprland-git
+      - alacritty
+      - wl-clipboard
+      - slurp
+      - grim
+      - rofi-lbonn-wayland-git
+      - mako
+      - swww
+      - thunar
+      - gvfs
+      - gvfs-smb
+      - dropbox
+      - thunar-dropbox
+      - dropbox-cli
+      - spotify
+      - spicetify-cli
+      - ttf-jetbrains-mono-nerd
+      - discord
+      - vivaldi
+      - wps-office
+      - ttf-wps-fonts
+      - visual-studio-code-bin
+      - pipes.sh
+      - neofetch
     become: yes
     become_user: yf
+  
   - name: Create .bash_profile
     ansible.builtin.file:
       path: /home/yf/.bash_profile
       state: touch
+      modification_time: preserve
+      access_time: preserve
     become: yes
     become_user: yf
+  
   - name: Write auto-hyprland login
     ansible.builtin.blockinfile:
       path: /home/yf/.bash_profile
