@@ -189,6 +189,7 @@
       - visual-studio-code-bin
       - pipes.sh
       - neofetch
+      - network-manager-applet
     become: yes
     become_user: yf
   
