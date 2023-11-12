@@ -33,12 +33,7 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/mai
 spicetify backup apply
 ```
 12. Fonts - `ttf-jebrains-mono-nerd`
-13. Discord - `discord`
-```
-sudo chown -R $USER:$USER /opt/discord
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-```
-Install vencord, and then install openasar!
+13. Discord - `vencord-desktop-git`
 14. Browser - `vivaldi`
 ``` 
 (credit: Archwiki)
