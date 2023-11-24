@@ -1,47 +1,39 @@
 {
     "layer": "top",
-    "height": 30,
+    "position": "top",
+    "height": 24,
     "spacing": 4,
-    "modules-left": ["hyprland/workspaces", "custom/media"],
-    "modules-right": [
-	"battery",
-        "pulseaudio", 
-        "clock", 
-        "tray"
+    "modules-left": [
+      "hyprland/workspaces",
+      "wlr/taskbar"
     ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "tray",
+      "clock"
+    ],
+    "wlr/taskbar": {
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "ignore-list": [
+        "foot"
+      ]
+    },
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "on-click": "activate"
+      "on-click": "activate",
+      "on-scroll-up": "hyprctl dispatch workspace e-1",
+      "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+    "hyprland/window": {
+      "max-length": 128
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "tray": {
-        "spacing": 10
-    },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "{volume}% {icon}    {format_source}",
-        "format-bluetooth": "{volume}% {icon}    {format_source}",
-        "format-bluetooth-muted": " {icon}    {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
+      "spacing": 4
     }
-}
-
+  }

@@ -1,32 +1,34 @@
-@import "macchiato.css";
-
-#waybar {
-  padding: 5px;
-  background-color: @surface0;
-  border-bottom: 1px solid @surface1;
-  color: @pink;
+@import url("./theme.css");
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Iosevka;
+    font-size: 11pt;
+    min-height: 0;
 }
-
+window#waybar {
+    opacity: 0.9;
+    background: @background-darker;
+    color: @foreground;
+    border-bottom: 2px solid @background;
+}
 #workspaces button {
-  border-radius: 0;
-  transition: 0.4s;
-  background-color: @surface1;
+    padding: 0 10px;
+    background: @background;
+    color: @foreground;
 }
-
-#workspaces button.active {
-  background-color: @surface2;
-}
-
-#workspaces button.urgent {
-  background-color: @red;
-}
-
 #workspaces button:hover {
-  background-color: @rosewater;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background-image: linear-gradient(0deg, @selection, @background-darker);
 }
-
-#clock, #pulseaudio, #tray, #battery {
-  background-color: @surface1;
-  padding: 0px 10px 0px 10px;
-  margin: 0px 3px 0px 3px;
+#workspaces button.active {
+    background-image: linear-gradient(0deg, @purple, @selection);
+}
+#taskbar button.active {
+    background-image: linear-gradient(0deg, @selection, @background-darker);
+}
+#clock {
+    padding: 0 4px;
+    background: @background;
 }
