@@ -28,6 +28,9 @@ window#waybar {
 #taskbar button.active {
     background-image: linear-gradient(0deg, @selection, @background-darker);
 }
+#battery {
+	padding: 0 10px;
+}
 #clock {
     padding: 0 4px;
     background: @background;
