@@ -92,7 +92,7 @@
       block: |
         [Service]
         ExecStart=
-        ExecStart=-/sbin/agetty -o '-p -- yf' --noclear --skip-login - $TERM
+        ExecStart=-/sbin/agetty --skip-login - $TERM
         Environment=XDG_SESSION_TYPE=wayland
     become: yes
   
@@ -100,10 +100,6 @@
     ansible.builtin.systemd:
       name: getty@tty1
       enabled: true
-    become: yes
-  
-  - name: Remove password of yf
-    user: name=yf password=''
     become: yes
   
   - name: Install stow
