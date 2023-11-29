@@ -186,6 +186,8 @@
       - pipes.sh
       - neofetch
       - network-manager-applet
+      - pam_autologin
+      - swaylock
     become: yes
     become_user: yf
   
