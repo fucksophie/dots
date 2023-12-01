@@ -28,8 +28,13 @@ window#waybar {
 #taskbar button.active {
     background-image: linear-gradient(0deg, @selection, @background-darker);
 }
-#battery {
+
+#battery, #mpris, #pulseaudio, #tray {
 	padding: 0 10px;
+	background: @background;
+}
+#mpris {
+	font-size: 9pt;
 }
 #clock {
     padding: 0 4px;
