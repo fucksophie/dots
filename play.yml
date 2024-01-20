@@ -131,13 +131,6 @@
     changed_when: 'result.stderr is search("LINK: ")'
     become: yes
     become_user: yf
-  
-  - name: Install dropbox GPG key
-    ansible.builtin.shell: curl -sSL https://linux.dropbox.com/fedora/rpm-public-key.asc | gpg --import
-    register: result
-    changed_when: 'result.stderr is search("imported")'
-    become: yes
-  
   - name: Install everything
     kewlfft.aur.aur:
       use: yay
@@ -172,9 +165,6 @@
       - thunar
       - gvfs
       - gvfs-smb
-      - dropbox
-      - thunar-dropbox
-      - dropbox-cli
       - spotify
       - spicetify-cli
       - ttf-jetbrains-mono-nerd

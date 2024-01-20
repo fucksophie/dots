@@ -22,11 +22,6 @@ Deps: `pkgconfig patch flex bison which`
 7. Notifications - `mako`
 8. Background - `swww`
 9. File manager - `thunar gvfs gvfs-smb`
-10. Dropbox - `dropbox thunar-dropbox dropbox-cli`
-```
-rm -rf ~/.dropbox-dist
-install -dm0 ~/.dropbox-dist
-```
 11. Music - `spotify spicetify-cli`
 ```
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
