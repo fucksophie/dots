@@ -71,37 +71,6 @@
     become: yes
     become_user: yf
   
-  - name: Creates getty autologin service folder
-    ansible.builtin.file:
-      path: /etc/systemd/system/getty@tty1.service.d
-      state: directory
-    become: yes
-
-  - name: Create skip-username.conf
-    ansible.builtin.file:
-      path: /etc/systemd/system/getty@tty1.service.d/skip-username.conf
-      state: touch
-      modification_time: preserve
-      access_time: preserve
-    become: yes
-    become_user: yf
-
-  - name: Insert block in getty config
-    ansible.builtin.blockinfile:
-      path: /etc/systemd/system/getty@tty1.service.d/skip-username.conf
-      block: |
-        [Service]
-        ExecStart=
-        ExecStart=-/sbin/agetty --skip-login - $TERM
-        Environment=XDG_SESSION_TYPE=wayland
-    become: yes
-  
-  - name: Enable getty@tty1
-    ansible.builtin.systemd:
-      name: getty@tty1
-      enabled: true
-    become: yes
-  
   - name: Install stow
     community.general.pacman:
       name:
@@ -123,7 +92,7 @@
     become: yes
     become_user: yf
   
-  - name: Run stowt
+  - name: Run stow
     ansible.builtin.shell: "stow . --target=/home/yf/ --verbose=2"
     args:
       chdir: /home/yf/.shell/src
@@ -154,7 +123,7 @@
       - hyprland
       - xdg-desktop-portal-hyprland-git
       - polkit-kde-agent
-      - waybar-hyprland-git
+      - waybar
       - alacritty
       - wl-clipboard
       - slurp
@@ -176,8 +145,8 @@
       - pipes.sh
       - neofetch
       - network-manager-applet
-      - pam_autologin
-      - swaylock
+      - lemurs
+      - syncthing
     become: yes
     become_user: yf
   
@@ -189,14 +158,23 @@
       access_time: preserve
     become: yes
     become_user: yf
-  
+    
+  - name: Enable lemurs
+    ansible.builtin.systemd:
+      name: lemurs
+      enabled: true
+    become: yes
+
+  - name: Creates getty autologin service folder
+    ansible.builtin.file:
+      path: /etc/lemurs/wayland/
+      state: directory
+    become: yes
+
   - name: Write auto-hyprland login
     ansible.builtin.blockinfile:
-      path: /home/yf/.bash_profile
+      path: /etc/lemurs/wayland/hyprland
       block: |
-        if [[ "$(tty)" == "/dev/tty1" ]]
-        then
-        Hyprland
-        fi
+        #! /bin/sh
+        exec Hyprland
     become: yes
-    become_user: yf
