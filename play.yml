@@ -91,7 +91,7 @@
       use: yay
     become: yes
     become_user: yf
-  
+
   - name: Run stow
     ansible.builtin.shell: "stow . --target=/home/yf/ --verbose=2"
     args:
@@ -165,10 +165,19 @@
       enabled: true
     become: yes
 
-  - name: Creates getty autologin service folder
+  - name: Create lemurs wayland dir
     ansible.builtin.file:
       path: /etc/lemurs/wayland/
       state: directory
+    become: yes
+
+  - name: Create auto hyprland login
+    ansible.builtin.file:
+      path: /etc/lemurs/wayland/hyprland
+      state: touch
+      modification_time: preserve
+      access_time: preserve
+      mode: a+x
     become: yes
 
   - name: Write auto-hyprland login
@@ -178,3 +187,4 @@
         #! /bin/sh
         exec Hyprland
     become: yes
+
