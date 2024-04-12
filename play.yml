@@ -80,7 +80,7 @@
   
   - name: Clone my dotfiles
     ansible.builtin.git:
-      repo: 'https://github.com/yourfriendoss/dots.git'
+      repo: 'https://github.com/fucksophie/dots.git'
       dest: /home/yf/.shell
     become: yes
     become_user: yf
