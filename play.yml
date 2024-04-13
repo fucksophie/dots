@@ -124,7 +124,8 @@
       - xdg-desktop-portal-hyprland-git
       - polkit-kde-agent
       - waybar
-      - alacritty
+      - foot
+      - nushell	
       - wl-clipboard
       - slurp
       - grim

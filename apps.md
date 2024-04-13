@@ -16,7 +16,7 @@ Deps: `pkgconfig patch flex bison which`
 1. Audio - `pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack qpwgraph`
 2. Wayland compositor - `hyprland xdg-desktop-portal-hyprland polkit-kde-agent`
 3. Status bar - `waybar`
-4. Terminal - `alacritty`
+4. Terminal - `foot`
 5. Screenshotting - `wl-clipboard slurp grim`
 6. Application picker - `rofi-lbonn-wayland`
 7. Notifications - `mako`
@@ -37,4 +37,4 @@ Go to chrome://flags page, then search wayland. You will see the Preferred Ozone
 ```
 15. Documents - `wps-office ttf-wps-fonts`
 16. Code editor - `visual-studio-code-bin`
-17. Extras - `pipes.sh neofetch lemurs`
+17. Extras - `pipes.sh neofetch lemurs nushell`
