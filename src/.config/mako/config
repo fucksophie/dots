@@ -1,12 +1,9 @@
-background-color=#282a36
-text-color=#44475a
-border-color=#282a36
+# Colors
 
-[urgency=low]
-border-color=#282a36
-
-[urgency=normal]
-border-color=#f1fa8c
+background-color=#eff1f5
+text-color=#4c4f69
+border-color=#1e66f5
+progress-color=over #ccd0da
 
 [urgency=high]
-border-color=#ff5555
+border-color=#fe640b

@@ -1,42 +1,98 @@
-@import url("./theme.css");
+@import "theme.css";
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: Iosevka;
-    font-size: 11pt;
+    font-family: FantasqueSansMono Nerd Font;
+    font-size: 17px;
     min-height: 0;
 }
-window#waybar {
-    opacity: 0.9;
-    background: @background-darker;
-    color: @foreground;
-    border-bottom: 2px solid @background;
-}
-#workspaces button {
-    padding: 0 10px;
-    background: @background;
-    color: @foreground;
-}
-#workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background-image: linear-gradient(0deg, @selection, @background-darker);
-}
-#workspaces button.active {
-    background-image: linear-gradient(0deg, @purple, @selection);
-}
-#taskbar button.active {
-    background-image: linear-gradient(0deg, @selection, @background-darker);
+
+#waybar {
+    background: @surface1;
+    color: @text;
+    margin: 1px 1px;
 }
 
-#battery, #mpris, #pulseaudio, #tray {
-	padding: 0 10px;
-	background: @background;
+#workspaces {
+    border-radius: 1rem;
+    margin: 5px;
+    background-color: @surface0;
+    margin-left: 1rem;
 }
-#mpris {
-	font-size: 9pt;
+
+#workspaces button {
+    color: @lavender;
+    border-radius: 1rem;
+    padding: 0.4rem;
 }
+
+#workspaces button.active {
+    color: @sky;
+    border-radius: 1rem;
+}
+
+#workspaces button:hover {
+    color: @sapphire;
+    border-radius: 1rem;
+}
+
+#custom-music,
+#backlight,
+#tray,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+    background-color: @surface0;
+    padding: 0.5rem 1rem;
+    margin: 5px 0;
+}
+
 #clock {
-    padding: 0 4px;
-    background: @background;
+    color: @blue;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 1rem;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#backlight,
+#battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+    color: @maroon;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
+}
+
+#custom-music {
+    color: @mauve;
+    border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
 }
